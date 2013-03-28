@@ -17,12 +17,15 @@ my $interp = Mason->new(
     plugins   => \@plugins,
 );
 
-# PSGI app
 my $app = sub {
     my $env = shift;
     $interp->handle_psgi($env);
 };
+my $static = Plack::App::File->new( root => "$cwd/static" );
+my $favicon = Plack::App::File->new( file => "$cwd/favicon.ico" );
+
 builder {
-    # Include PSGI middleware here
-    $app;
+    mount "/favicon.ico"=> $favicon;
+    mount "/static"     => $static;
+    mount "/"           => $app;
 };
