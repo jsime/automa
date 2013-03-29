@@ -1,0 +1,20 @@
+<%class>
+has 'post' => ( required => 1 );
+</%class>
+
+<div class="post">
+    <div class="heading">
+        <h1><a href="/post/YYYY/MM/DD/<% $.post->{'title_url'} %>/<% $.post->{'post_id'} %>">
+            <% $.post->{'title'} | H %>
+        </a></h1>
+        <h2><% $.post->{'posted_at'} %></h2>
+    </div>
+    <% $.post->{'content_above'} %>
+    <div class="tags">
+        <span>Tags:</span>
+        <ul>
+            <li><a href="/">Perl</a></li>
+            <li><a href="/">PostgreSQL</a></li>
+        </ul>
+    </div>
+</div>

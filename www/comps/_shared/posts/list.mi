@@ -1,0 +1,20 @@
+<%init>
+my $post = $db->do(q{
+    select p.post_id, p.title, p.title_url, p.summary, p.content_above, p.content_below,
+        to_char(p.posted_at, 'YYYY/MM/DD') as posted_at_url,
+        to_char(p.posted_at, 'YYYY-MM-DD HH24:MI TZ') as posted_at,
+        u.name, u.email
+    from posts p
+        join post_authors pa on (pa.post_id = p.post_id)
+        join users u on (u.user_id = pa.user_id)
+    where p.posted_at <= now()
+    order by p.posted_at desc
+    limit 10
+});
+</%init>
+
+<div id="posts">
+% while ($post->next) {
+    <& /_shared/posts/entry_above.mi, post => $post &>
+% }
+</div>
