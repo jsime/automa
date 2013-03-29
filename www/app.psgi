@@ -20,6 +20,11 @@ my $interp = Mason->new(
     allow_globals => [qw( $db )],
 );
 
+eval <<EOV;
+use lib "$cwd/../lib";
+use Automa;
+EOV
+
 my $dbh = DBIx::DataStore->new('automa');
 
 my $app = sub {
