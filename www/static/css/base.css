@@ -4,14 +4,6 @@ body {
     font-size: 1em;
 }
 
-p, li {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 95%;
-    font-size-adjust: 0.457;
-    font-weight: normal;
-    font-style: normal;
-}
-
 a, a:visited {
     text-decoration: none;
     color: #2fa7cf;
@@ -20,8 +12,28 @@ a:hover, a:active {
     color: #5fd7ff;
 }
 
+p, li, blockquote {
+    font-family: "Skolar Regular", Georgia, 'Times New Roman', serif;
+    font-size: 95%;
+    font-size-adjust: 0.457;
+    font-weight: normal;
+    font-style: normal;
+}
+
 em {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: "Skolar Italic", Georgia, 'Times New Roman', serif;
+    font-style: italic;
+}
+
+strong {
+    font-family: "Skolar Semibold", Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+em strong, strong em {
+    font-family: "Skolar Semibold Italic", Georgia, 'Times New Roman', serif;
+    font-weight: 600;
     font-style: italic;
 }
 
