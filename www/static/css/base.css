@@ -6,10 +6,10 @@ body {
 
 a, a:visited {
     text-decoration: none;
-    color: #2fa7cf;
+    color: #389ba6;
 }
 a:hover, a:active {
-    color: #5fd7ff;
+    color: #6cced9;
 }
 
 p, li, blockquote {
@@ -49,12 +49,12 @@ em strong, strong em {
     font-size-adjust: 0.46;
     font-weight: 500;
     font-style: normal;
-    color: #2fa7cf;
+    color: #389ba6;
     margin: -50px -20px;
 }
 #header h1 a, #header h1 a:hover, #header h1 a:visited, #header h1 a:active {
     text-decoration: none;
-    color: #ffaf30;
+    color: #d9a13b;
 }
 
 #main {
