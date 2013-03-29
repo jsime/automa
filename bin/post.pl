@@ -92,7 +92,7 @@ sub file_contents {
 
     die "File $fn does not exist, or is not readable!" unless -f $fn && -r _;
 
-    local $/ = '';
+    local $/ = undef;
     open (my $fh, '<', $fn) or die "Error opening $fn: $!";
     my $text = <$fh>;
     close($fh);
