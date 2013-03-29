@@ -3,6 +3,7 @@ use Cwd qw(realpath);
 use File::Basename;
 use Mason;
 use Plack::Builder;
+use Plack::App::File;
 use warnings;
 use strict;
 
