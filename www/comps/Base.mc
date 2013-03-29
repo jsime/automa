@@ -10,7 +10,7 @@ $.title => ''
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/static/css/base.css" />
-    <link rel="stylesheet" href="//f.fontdeck.com/s/css/posU9Y0DYSwKyT7pZ5oMklOhSjk/automatomatromaton.com/31320.css" type="text/css" />
+    <link rel="stylesheet" href="//f.fontdeck.com/s/css/EJxfWw6ZFcXKtIbU/vX0QLl5r6Y/automatomatromaton.com/31320.css" type="text/css" />
 </head>
 <body>
 <div id="header">
