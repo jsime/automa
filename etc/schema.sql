@@ -35,7 +35,7 @@ create index posts_lower_title_url_idx on posts (lower(title_url));
 create index posts_created_at_idx on posts (created_at);
 create index posts_updated_at_idx on posts (updated_at);
 create index posts_posted_at_idx on posts (posted_at);
-alter table posts add constraint required_fields check (posted_at is null or (title is not null and title_url is not null and content_above is not null);
+alter table posts add constraint required_fields check (posted_at is null or (title is not null and title_url is not null and content_above is not null));
 
 create table post_authors (
     post_id integer not null,
