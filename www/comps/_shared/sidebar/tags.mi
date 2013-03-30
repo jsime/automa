@@ -6,7 +6,9 @@ my $tag = $db->do(q{
 });
 </%init>
 
-<h1>Tags</h1>
+<div class="heading">
+    <h1>tags</h1>
+</div>
 <ol>
 % while ($tag->next) {
     <li><a href="/tags/<% $tag->{'name_url'} | U %>"><% $tag->{'name'} | H %></a></li>

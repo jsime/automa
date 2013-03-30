@@ -19,24 +19,30 @@ $.title => ''
 
 <div id="main">
     <div id="sidebar">
-        <h1>Navigation</h1>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/rss">RSS</a></li>
-        </ul>
+        <div class="internal">
+            <div class="heading">
+                <h1>navigation</h1>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/rss">RSS</a></li>
+            </ul>
 
-        <h1>Elsewhere</h1>
-        <ul>
-            <li><a href="http://omniti.com/is/jon-sime">OmniTI</a></li>
-            <li><a href="https://github.com/jsime">GitHub</a></li>
-            <li><a href="https://metacpan.org/author/JSIME">CPAN</a></li>
-            <li><a href="https://plus.google.com/u/0/101280246673690128263">Google+</a></li>
-            <li><a href="https://twitter.com/bikesorbooks">Twitter</a></li>
-        </ul>
+            <div class="heading">
+                <h1>elsewhere</h1>
+            </div>
+            <ul>
+                <li><a href="http://omniti.com/is/jon-sime">OmniTI</a></li>
+                <li><a href="https://github.com/jsime">GitHub</a></li>
+                <li><a href="https://metacpan.org/author/JSIME">CPAN</a></li>
+                <li><a href="https://plus.google.com/u/0/101280246673690128263">Google+</a></li>
+                <li><a href="https://twitter.com/bikesorbooks">Twitter</a></li>
+            </ul>
 
-        <& /_shared/sidebar/tags.mi &>
+            <& /_shared/sidebar/tags.mi &>
+        </div>
     </div>
     <div id="content">
       <% inner() %>
