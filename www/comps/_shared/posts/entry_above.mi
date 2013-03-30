@@ -10,14 +10,17 @@ my $tag = $db->do(q{
     where pt.post_id = ?
     order by t.name asc
 }, $.post->{'post_id'});
+
+my $post_ts = $.post->{'posted_at'};
+$post_ts =~ s{(\d)\s+(\d)}{$1<br />$2}o;
 </%init>
 
 <div class="post">
     <div class="heading">
+        <h2><% $post_ts %></h2>
         <h1><a href="/post/YYYY/MM/DD/<% $.post->{'title_url'} %>/<% $.post->{'post_id'} %>">
             <% $.post->{'title'} | H %>
         </a></h1>
-        <h2><% $.post->{'posted_at'} %></h2>
     </div>
     <% $.post->{'content_above'} %>
     <div class="tags">
