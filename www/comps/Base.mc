@@ -36,21 +36,7 @@ $.title => ''
             <li><a href="https://twitter.com/bikesorbooks">Twitter</a></li>
         </ul>
 
-        <h1>Tags</h1>
-        <ol>
-            <li><a href="/tag/foo">C</a></li>
-            <li><a href="/tag/foo">NodeJS</a></li>
-            <li><a href="/tag/foo">Erlang</a></li>
-            <li><a href="/tag/foo">Lisp</a></li>
-            <li><a href="/tag/foo">Scheme</a></li>
-            <li><a href="/tag/foo">Disaster Porn</a></li>
-            <li><a href="/tag/foo">Foo</a></li>
-            <li><a href="/tag/foo">Bar</a></li>
-            <li><a href="/tag/foo">Baz</a></li>
-            <li><a href="/tag/foo">Fubar</a></li>
-            <li><a href="/tag/foo">Perl</a></li>
-            <li><a href="/tag/foo">PostgreSQL</a></li>
-        </ol>
+        <& /_shared/sidebar/tags.mi &>
     </div>
     <div id="content">
       <% inner() %>

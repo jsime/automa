@@ -1,0 +1,14 @@
+<%init>
+my $tag = $db->do(q{
+    select t.name, t.name_url
+    from tags t
+    order by t.name asc
+});
+</%init>
+
+<h1>Tags</h1>
+<ol>
+% while ($tag->next) {
+    <li><a href="/tags/<% $tag->{'name_url'} | U %>"><% $tag->{'name'} | H %></a></li>
+% }
+</ol>
