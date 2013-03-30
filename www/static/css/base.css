@@ -1,21 +1,33 @@
+/* Possible color schemes:
+Red (deep)       #a63c46
+Light Background #ebf5f2
+Sea Foam (light) #94bfb8
+Sea Foam (mid)   #6d9e90
+Sea Foam (dark)  #307360
+
+Purple  #69345c
+Green   #b2b844
+Light   #fbfbf3
+Foam    #82acaa
+Brown   #4c433d
+*/
+
 body {
-    background-color: white;
+    background-color: #f8f8f8;
     margin: 0;
     font-size: 1em;
 }
 
 a, a:visited {
     text-decoration: none;
-    color: #389ba6;
+    color: #307360;
 }
 a:hover, a:active {
-    color: #6cced9;
+    color: #6d9e90;
 }
 
 p, li, blockquote {
     font-family: "Skolar Regular", Georgia, 'Times New Roman', serif;
-    font-size: 95%;
-    font-size-adjust: 0.457;
     font-weight: normal;
     font-style: normal;
 }
@@ -38,7 +50,7 @@ em strong, strong em {
 }
 
 #header {
-    background-color: #eee;
+    background-color: #a63c46;
     width: 100%;
     height: 60px;
     overflow: hidden;
@@ -46,15 +58,14 @@ em strong, strong em {
 #header h1 {
     font-family: "Grotesk URW Medium", Arial, Helvetica, sans-serif;
     font-size: 126px;
-    font-size-adjust: 0.46;
     font-weight: 500;
     font-style: normal;
-    color: #389ba6;
+    color: #f8f8f8;
     margin: -50px -20px;
 }
 #header h1 a, #header h1 a:hover, #header h1 a:visited, #header h1 a:active {
     text-decoration: none;
-    color: #d9a13b;
+    color: #f8f8f8;
 }
 
 #main {
@@ -75,7 +86,6 @@ em strong, strong em {
 
 #sidebar h1 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size-adjust: 0.46;
     font-weight: normal;
     font-style: normal;
     font-size: 95%;
@@ -93,27 +103,28 @@ em strong, strong em {
 
 .post {
     width: 100%;
-    border-top: 10px solid #ccc;
-    border-bottom: 5px solid #ccc;
+    border-top: 10px solid #6d9e90;
+    border-bottom: 5px solid #6d9e90;
     margin: 1em 0;
 }
 .post .heading {
     font-family: Arial, Helvetica, sans-serif;
-    font-size-adjust: 0.46;
     font-weight: normal;
     font-style: normal;
     background-color: #f8f8f8;
     padding: 0.5em;
     margin: -7px 3px 0 3px;
 }
-.post h1 {
-    font-size: 1.5em;
+.post .heading h1 {
+    font-size: 1.25em;
     margin: 0;
 }
-.post h2 {
+.post .heading h2 {
+    float: right;
+    text-align: right;
     font-size: 0.8em;
-    color: #bbb;
-    margin: 0.4em 0 0 0;
+    color: #94bfb8;
+    margin: -0.25em 0 0 0;
 }
 
 .post p {
@@ -130,7 +141,6 @@ em strong, strong em {
     display: inline;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 80%;
-    font-size-adjust: 0.46;
     font-weight: normal;
     font-style: normal;
 }
@@ -149,7 +159,6 @@ em strong, strong em {
 pre, code {
     font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
     font-size: 85%;
-    font-size-adjust: 0.5;
     font-weight: normal;
     font-style: normal;
     background-color: #eee;
