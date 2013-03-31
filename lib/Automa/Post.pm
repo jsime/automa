@@ -25,6 +25,8 @@ sub find {
         limit   => { isa => 'Int', default => -1 },
 
         order   => { isa => 'Str', default => 'p.posted_at desc' },
+
+        MX_PARAMS_VALIDATE_NO_CACHE => 1,
     );
 
     my (@joins, @where, @binds);
@@ -38,7 +40,7 @@ sub find {
             if ($path =~ m{^/?(\d+)$}o) {
                 push(@path_wheres, '(p.post_id = ?)');
                 push(@binds, $1);
-            } elsif ($path =~ m{(\d{4})/(\d\d)/(\d\d)/([^/]+)(?:(\d+))}o) {
+            } elsif ($path =~ m{(\d{4})/(\d\d)/(\d\d)/([^/]+)(?:/(\d+))}o) {
                 if (defined $5) {
                     push(@path_wheres, '(p.post_id = ?)');
                     push(@binds, $5);
@@ -57,7 +59,8 @@ sub find {
                 push(@binds, $1);
             }
         }
-
+print STDERR "PATH WHERES:\n";
+print STDERR "    $_\n" for @path_wheres;
         if (@path_wheres > 0) {
             push(@where, sprintf('(%s)', join(' or ', @path_wheres)));
         }
