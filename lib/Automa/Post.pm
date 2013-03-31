@@ -1,10 +1,84 @@
 package Automa::Post;
 
+use Moose;
+use MooseX::Params::Validate;
+
 use strict;
 use warnings;
 
 sub find {
-    my ($class, %opts) = @_;
+    my $class = shift;
+
+    my %opts = validated_hash(\@_,
+        db      => { isa => 'DBIx::DataStore' },
+
+        ids     => { isa => 'ArrayRef[Int]', optional => 1 },
+        paths   => { isa => 'ArrayRef[Str]', optional => 1 },
+        from    => { isa => 'Str', optional => 1 },
+        to      => { isa => 'Str', optional => 1 },
+
+        tags    => { isa => 'ArrayRef', optional => 1 },
+        authors => { isa => 'ArrayRef', optional => 1 },
+
+        pager   => { isa => 'Bool', default => 1 },
+        page    => { isa => 'Int', default => 1 },
+        limit   => { isa => 'Int', default => -1 },
+
+        order   => { isa => 'Str', default => 'p.posted_at desc' },
+    );
+
+    my (@joins, @where, @binds);
+
+    push(@where, 'p.posted_at is not null');
+
+    if (exists $opts{'ids'} && @{$opts{'ids'}} > 0) {
+        push(@where, 'p.post_id in ???');
+        push(@binds, $opts{'ids'});
+    }
+
+    if (exists $opts{'from'}) {
+        push(@where, 'p.posted_at >= ?');
+        push(@binds, $opts{'from'});
+    }
+    if (exists $opts{'to'}) {
+        push(@where, 'p.posted_at <= ?');
+        push(@binds, $opts{'to'});
+    }
+
+    if (exists $opts{'tags'} && @{$opts{'tags'}} > 0) {
+        push(@joins, 'join post_tags pt on (pt.post_id = p.post_id) join tags t on (t.tag_id = pt.tag_id)');
+        push(@where, '(t.name_url in ??? or t.tag_id in ???)');
+        push(@binds, $opts{'tags'}, [0, grep { $_ =~ m{^\d+$}o } @{$opts{'tags'}}]);
+    }
+
+    if (exists $opts{'authors'} && @{$opts{'authors'}} > 0) {
+        push(@joins, 'join post_authors pa on (pa.post_id = p.post_id) join users u on (u.user_id = pa.user_id)');
+        push(@where, '(u.name_url in ??? or u.user_id in ???)');
+        push(@binds, $opts{'authors'}, [0, grep { $_ =~ m{^\d+$}o } @{$opts{'authors'}}]);
+    }
+
+    my $order_by = $opts{'order'};
+
+    my $res = $opts{'db'}->do(
+        { pager => $opts{'pager'}, page => $opts{'page'}, per_page => $opts{'limit'} },
+        q{  select p.post_id, p.title, p.title_url, p.summary,
+                p.content_above, p.content_below,
+                to_char(p.posted_at, 'YYYY-MM-DD HH24:MI TZ') as posted_at,
+                to_char(p.posted_at, 'YYYY/MM/DD') as posted_at_url
+            from posts p } . join(' ', @joins) . q{
+            where } . join(' and ', @where) . qq{
+            order by $order_by
+        }, @binds);
+
+    return unless $res;
+
+    my @posts;
+
+    while ($res->next) {
+        push(@posts, (bless { map { $_ => $res->{$_} } $res->columns }, $class));
+    }
+
+    return @posts;
 }
 
 sub new {
@@ -16,6 +90,10 @@ sub new {
 }
 
 sub id {
+    my ($self) = @_;
+
+    return $self->{'post_id'} if exists $self->{'post_id'} or $self->save;
+    return;
 }
 
 sub title {
@@ -67,8 +145,8 @@ sub posted_at {
 sub path {
     my ($self) = @_;
 
-    return unless exists $self->{'posted_at_url'} && exists $self->{'id'} && exists $self->{'title_url'};
-    return sprintf('/post/%s/%s/%d', $self->{'posted_at_url'}, $self->{'title_url'}, $self->{'id'};
+    return unless exists $self->{'posted_at_url'} && exists $self->{'post_id'} && exists $self->{'title_url'};
+    return sprintf('/post/%s/%s/%d', $self->{'posted_at_url'}, $self->{'title_url'}, $self->{'post_id'});
 }
 
 sub live {
