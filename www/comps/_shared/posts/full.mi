@@ -1,0 +1,20 @@
+<%class>
+has 'post' => ( required => 1 );
+</%class>
+
+<div class="post">
+    <div class="heading">
+        <h2><% $.post->posted_at %></h2>
+        <h1><a href="<% $.post->path %>"><% $.post->title | H %></a></h1>
+    </div>
+    <% $.post->content_above %>
+    <% $.post->content_below %>
+    <div class="tags">
+        <span>Tags:</span>
+        <ul>
+% foreach my $tag ($.post->tags) {
+            <li><a href="/tags/<% $tag->name_url | U %>"><% $tag->name | H %></a></li>
+% }
+        </ul>
+    </div>
+</div>
