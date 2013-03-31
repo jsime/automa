@@ -1,7 +1,9 @@
 <%init>
 my $tag = $db->do(q{
-    select t.name, t.name_url
+    select t.tag_id, t.name, t.name_url
     from tags t
+        join post_tags pt on (pt.tag_id = t.tag_id)
+    group by t.tag_id
     order by t.name asc
 });
 </%init>
