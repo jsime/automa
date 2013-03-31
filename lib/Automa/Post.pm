@@ -31,6 +31,29 @@ sub find {
 
     push(@where, 'p.posted_at is not null');
 
+    if (exists $opts{'paths'} && @{$opts{'paths'}} > 0) {
+        my @path_wheres;
+
+        foreach my $path (@{$opts{'paths'}}) {
+            if ($path =~ m{^/?(\d+)$}o) {
+                push(@path_wheres, '(p.post_id = ?)');
+                push(@binds, $1);
+            } elsif ($path =~ m{(\d{4})/(\d\d)/(\d\d)/([^/]+)(?:(\d+))}o) {
+                if (defined $5) {
+                    push(@path_wheres, '(p.post_id = ?)');
+                    push(@binds, $5);
+                } else {
+                    push(@path_wheres, '(p.posted_at::date = ? and lower(p.title_url) = lower(?))');
+                    push(@binds, "$1-$2-$3", $4);
+                }
+            }
+        }
+
+        if (@path_wheres > 0) {
+            push(@where, sprintf('(%s)', join(' or ', @path_wheres)));
+        }
+    }
+
     if (exists $opts{'ids'} && @{$opts{'ids'}} > 0) {
         push(@where, 'p.post_id in ???');
         push(@binds, $opts{'ids'});
