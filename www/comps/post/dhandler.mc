@@ -7,6 +7,10 @@ my ($post) = Automa::Post->find(
 
 $m->not_found unless defined $post;
 
+my $given_path = sprintf('/post/%s', $m->path_info);
+
+$m->redirect($post->path) unless $given_path eq $post->path;
+
 $.title($post->title);
 </%init>
 
