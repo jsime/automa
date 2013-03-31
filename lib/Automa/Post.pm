@@ -46,6 +46,15 @@ sub find {
                     push(@path_wheres, '(p.posted_at::date = ? and lower(p.title_url) = lower(?))');
                     push(@binds, "$1-$2-$3", $4);
                 }
+            } elsif ($path =~ m{(\d{4})/(\d\d)/(\d\d)}o) {
+                push(@path_wheres, '(p.posted_at::date = ?)');
+                push(@binds, "$1-$2-$3");
+            } elsif ($path =~ m{(\d{4})/(\d\d)}o) {
+                push(@path_wheres, '(extract(year from p.posted_at) = ? and extract(month from p.posted_at) = ? )');
+                push(@binds, $1, $2);
+            } elsif ($path =~ m{(\d{4})}o) {
+                push(@path_wheres, '(extract(year from p.posted_at) = ?)');
+                push(@binds, $1);
             }
         }
 
