@@ -59,8 +59,7 @@ sub find {
                 push(@binds, $1);
             }
         }
-print STDERR "PATH WHERES:\n";
-print STDERR "    $_\n" for @path_wheres;
+
         if (@path_wheres > 0) {
             push(@where, sprintf('(%s)', join(' or ', @path_wheres)));
         }
