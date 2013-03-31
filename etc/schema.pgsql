@@ -4,11 +4,13 @@ create table users (
     user_id     serial not null,
     email       text not null,
     name        text not null,
+    name_url    text,
     created_at  timestamp with time zone not null default now(),
     updated_at  timestamp with time zone
 );
 alter table users add primary key (user_id);
 create unique index users_lower_email_idx on users (lower(email));
+create unique index users_lower_name_url_idx on users (lower(name_url));
 
 create table tags (
     tag_id      serial not null,
