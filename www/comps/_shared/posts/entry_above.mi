@@ -9,20 +9,20 @@ my $tag = $db->do(q{
         join post_tags pt on (pt.tag_id = t.tag_id)
     where pt.post_id = ?
     order by t.name asc
-}, $.post->{'post_id'});
+}, $.post->id);
 
-my $post_ts = $.post->{'posted_at'};
+my $post_ts = $.post->posted_at;
 $post_ts =~ s{(\d)\s+(\d)}{$1<br />$2}o;
 </%init>
 
 <div class="post">
     <div class="heading">
         <h2><% $post_ts %></h2>
-        <h1><a href="/post/YYYY/MM/DD/<% $.post->{'title_url'} %>/<% $.post->{'post_id'} %>">
-            <% $.post->{'title'} | H %>
+        <h1><a href="<% $.post->path %>">
+            <% $.post->title | H %>
         </a></h1>
     </div>
-    <% $.post->{'content_above'} %>
+    <% $.post->content_above %>
     <div class="tags">
         <span>Tags:</span>
         <ul>
