@@ -76,6 +76,7 @@ sub find {
 
     while ($res->next) {
         push(@posts, (bless { map { $_ => $res->{$_} } $res->columns }, $class));
+        $posts[-1]->db($opts{'db'});
     }
 
     return @posts;
@@ -87,6 +88,15 @@ sub new {
     my $self = bless {}, $class;
 
     return $self;
+}
+
+sub db {
+    my ($self, $db) = @_;
+
+    $self->{'db'} = $db if defined $db && ref($db) eq 'DBIx::DataStore';
+
+    return $self->{'db'} if exists $self->{'db'};
+    return;
 }
 
 sub id {
