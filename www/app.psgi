@@ -38,6 +38,10 @@ my $static = Plack::App::File->new( root => "$cwd/static" );
 my $favicon = Plack::App::File->new( file => "$cwd/favicon.ico" );
 
 builder {
+    enable "Plack::Middleware::ErrorDocument",
+        404 => '/errors/404',
+        subrequest => 1;
+
     mount "/favicon.ico"=> $favicon;
     mount "/static"     => $static;
     mount "/"           => $app;
