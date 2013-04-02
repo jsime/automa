@@ -24,7 +24,7 @@ has 'post' => ( required => 1 );
     var disqus_shortname = 'automatomatromaton';
     var disqus_url = 'http://automatomatromaton.com<% $.post->path %>';
     var disqus_identifier = 'post-<% $.post->id %>';
-    var disqus_title = '<% $.post->title | H %>';
+    var disqus_title = '<% $.post->title | U %>';
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
