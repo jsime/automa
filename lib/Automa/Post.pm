@@ -98,6 +98,7 @@ sub find {
         q{  select p.post_id, p.title, p.title_url, p.summary,
                 p.content_above, p.content_below,
                 to_char(p.posted_at, 'YYYY-MM-DD HH24:MI TZ') as posted_at,
+                to_char(p.posted_at, 'Dy, DD Mon YYYY HH24:MI:SS TZ') as posted_at_rfc822,
                 to_char(p.posted_at, 'YYYY/MM/DD') as posted_at_url
             from posts p } . join(' ', @joins) . q{
             where } . join(' and ', @where) . qq{
@@ -184,6 +185,20 @@ sub posted_at {
 
     return unless exists $self->{'posted_at'};
     return $self->{'posted_at'};
+}
+
+sub posted_at_rfc822 {
+    my ($self) = @_;
+
+    return unless exists $self->{'posted_at_rfc_822'};
+    return $self->{'posted_at_rfc822'};
+}
+
+sub posted_at_url {
+    my ($self) = @_;
+
+    return unless exists $self->{'posted_at_url'};
+    return $self->{'posted_at_url'};
 }
 
 sub path {
