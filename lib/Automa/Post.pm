@@ -190,7 +190,7 @@ sub posted_at {
 sub posted_at_rfc822 {
     my ($self) = @_;
 
-    return unless exists $self->{'posted_at_rfc_822'};
+    return unless exists $self->{'posted_at_rfc822'};
     return $self->{'posted_at_rfc822'};
 }
 
