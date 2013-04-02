@@ -14,7 +14,7 @@ world around me. I'm back in the world of profit, and for now, let's leave it at
 
 <p>I tinker around with code and databases, I bake (and fail at cooking), I play with my
 beagle (and my partner's chihuahua), and every once in a while I actually contribute
-something of marginal worth to my employer. You can find me here, on GitHub, on CPAN, on
+something of marginal value to my employer. You can find me here, on GitHub, on CPAN, on
 IRC (Freenode and UBEK as <code>stopbit</code>), walking and sometimes cycling around my
 fair hometown (and our nation's capital), or whittling away a few hours placing blocks in
 Minecraft.</p>
