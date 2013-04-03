@@ -2,6 +2,10 @@
 has 'post' => ( required => 1 );
 </%class>
 
+<%init>
+$.title($.post->title);
+</%init>
+
 <div class="post">
     <div class="heading">
         <h2><% $.post->posted_at %></h2>
