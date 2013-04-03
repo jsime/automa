@@ -6,7 +6,9 @@ $.title => ''
 <!doctype html>
 <html>
 <head>
-    <title><% $.title %></title>
+    <% $.Defer { %>
+    <title><% join(' | ', grep { $_ =~ /\w+/ } ($.title, 'automatomatromaton')) %></title>
+    </%>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/static/css/base.css" />
