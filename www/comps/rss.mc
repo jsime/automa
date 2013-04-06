@@ -24,7 +24,7 @@ foreach my $post (@posts) {
     $rss->add_item( title => $post->title,
                     pubDate => $post->posted_at_rfc822,
                     permaLink => 'http://automatomatromaton.com' . $post->path,
-                    description => $post->content_above . $post->content_below
+                    description => ($post->content_above || '') . ($post->content_below || '')
                   );
 }
 
