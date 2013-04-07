@@ -81,13 +81,13 @@ sub find {
 
     if (exists $opts{'tags'} && @{$opts{'tags'}} > 0) {
         push(@joins, 'join post_tags pt on (pt.post_id = p.post_id) join tags t on (t.tag_id = pt.tag_id)');
-        push(@where, '(t.name_url in ??? or t.tag_id in ???)');
+        push(@where, '(t.name_url in (???) or t.tag_id in (???))');
         push(@binds, $opts{'tags'}, [0, grep { $_ =~ m{^\d+$}o } @{$opts{'tags'}}]);
     }
 
     if (exists $opts{'authors'} && @{$opts{'authors'}} > 0) {
         push(@joins, 'join post_authors pa on (pa.post_id = p.post_id) join users u on (u.user_id = pa.user_id)');
-        push(@where, '(u.name_url in ??? or u.user_id in ???)');
+        push(@where, '(u.name_url in (???) or u.user_id in (???))');
         push(@binds, $opts{'authors'}, [0, grep { $_ =~ m{^\d+$}o } @{$opts{'authors'}}]);
     }
 
