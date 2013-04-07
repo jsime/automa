@@ -102,6 +102,8 @@ sub find {
                 to_char(p.posted_at, 'YYYY/MM/DD') as posted_at_url
             from posts p } . join(' ', @joins) . q{
             where } . join(' and ', @where) . qq{
+            group by p.post_id, p.title, p.title_url, p.summary,
+                p.content_above, p.content_below, posted_at
             order by $order_by
         }, @binds);
 
