@@ -1,6 +1,8 @@
 <%init>
-my @tags = grep { defined $_ && $_ =~ m{\w}o } split(/,/, (split('/'. $m->path_info))[0]);
+my @path_parts = split('/', $m->path_info);
+$m->redirect('/') unless @path_parts && $path_parts[0] =~ m{\w}o;
 
+my @tags = grep { defined $_ && $_ =~ m{\w}o } split(',', $path_parts[0]);
 $m->redirect('/') unless @tags > 0;
 
 my @posts = Automa::Post->find(
