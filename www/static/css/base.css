@@ -82,12 +82,25 @@ ol, ul {
     width: 800px;
 }
 
-#content h1 {
+#content h1, h2, h3 {
     font-family: "Grotesk URW Medium", Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-style: normal;
+}
+
+#content h1 {
     font-size: 2.5em;
     margin-top: 1.5em;
+}
+
+#content h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+#content h3 {
+    font-size: 1em;
+    margin-top: 0.75em;
 }
 
 #sidebar {
