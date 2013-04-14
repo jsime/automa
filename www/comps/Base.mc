@@ -40,7 +40,6 @@ $.title => ''
                 <li><a href="https://github.com/jsime">GitHub</a></li>
                 <li><a href="https://metacpan.org/author/JSIME">CPAN</a></li>
                 <li><a href="https://plus.google.com/u/0/101280246673690128263">Google+</a></li>
-                <li><a href="https://twitter.com/bikesorbooks">Twitter</a></li>
             </ul>
 
             <& /_shared/sidebar/tags.mi &>
