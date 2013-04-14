@@ -25,3 +25,16 @@ maintainable, and slip in a few new features I've wanted for a long time.</p>
 
 <p>The rewrite is not yet complete, but you can get the legacy/stable version at
 <a href="https://github.com/jsime/dbix-datastore-legacy">https://github.com/jsime/dbix-datastore-legacy</a>.</p>
+
+<h2>RoboBot</h2>
+
+<h3>GitHub: <a href="https://github.com/jsime/robobot">https://github.com/jsime/robobot</a></h3>
+
+<p>An IRC bot written in Perl (because everyone ends up writing their own IRC bot), using
+POE::Component::IRC for event handling and Module::Pluggable to provide a simple way to develop
+a variety of commands and features. Supports macroing, infobot functionality, output chaining
+and redirection, and a slew of included command plugins.</p>
+
+<p>RoboBot will connect to any number of servers and channels, and it is possible to limit use
+of any of the commands to specific nicks (presumably your server will offer some sort of basic
+nick protection, but even so this shouldn't be considered foolproof... because it isn't).</p>
