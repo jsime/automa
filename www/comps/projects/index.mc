@@ -38,3 +38,22 @@ and redirection, and a slew of included command plugins.</p>
 <p>RoboBot will connect to any number of servers and channels, and it is possible to limit use
 of any of the commands to specific nicks (presumably your server will offer some sort of basic
 nick protection, but even so this shouldn't be considered foolproof... because it isn't).</p>
+
+<h2>pgcrond</h2>
+
+<h3>GitHub: <a href="https://github.com/jsime/pgcrond">https://github.com/jsime/pgcrond</a></h3>
+
+<p>Intended to allow or a simpler way to run schedule tasks against PostgreSQL clusters. The
+<code>master</code> branch on GitHub currently has the original version, which has been used in production
+environments, but needs a serious rewrite. Which just happens to be going in the <code>rewrite</code>
+branch. When I have time, that is.</p>
+
+<p>The gist of the tool is to allow a cron-like method of running anything from raw SQL, to Perl
+modules (that are automatically handed a working DBIx::DataStore object), <code>psql</code>
+client commands, or just generic Bash scripts (which may or may not actually interact with the
+database, though they will have the various <code>PG*</code> environment variables set).</p>
+
+<p>Credentials are able to be stored centrally (all job types are intended to support <code>~/.pgpass</code>
+and <code>datastore.yml</code> (homedir, system wide, etc.) so that you aren't forced to keep
+connection information in multiple locations just so that you can have multiple job types run
+against your databases.</p>
