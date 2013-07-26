@@ -10,22 +10,14 @@ my $tag = $db->do(q{
     where pt.post_id = ?
     order by t.name asc
 }, $.post->id);
-
-my $post_ts = $.post->posted_at;
-$post_ts =~ s{(\d)\s+(\d)}{$1<br />$2}o;
 </%init>
 
-<div class="post">
-    <div class="heading">
-        <h2><% $post_ts %></h2>
-        <h1><a href="<% $.post->path %>">
-            <% $.post->title | H %>
-        </a></h1>
-    </div>
-    <% $.post->content_above %>
-    <div class="tags">
-        <span>Tags:</span>
-        <ul>
+<div class="row">
+    <div class="large-12 columns">
+        <h1><a href="<% $.post->path %>"><% $.post->title | H %></a></h1>
+        <small><% $.post->posted_at %></small>
+        <% $.post->content_above %>
+        <ul class="inline-list">
 % while ($tag->next) {
             <li><a href="/tags/<% $tag->{'name_url'} | U %>"><% $tag->{'name'} | H %></a></li>
 % }
