@@ -14,6 +14,15 @@ Apercu Mono Regular
 .top-bar {
     margin-bottom: 0;
 }
+.top-bar .top-bar-section {
+    font-family: 'Museo Sans 100', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+.top-bar .top-bar-section li a {
+    font-weight: 100;
+    text-transform: uppercase;
+}
 .blowout {
     position: relative;
     width: 100%;
