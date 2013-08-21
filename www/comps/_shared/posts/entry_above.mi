@@ -15,7 +15,7 @@ my $tag = $db->do(q{
 <div class="row">
     <div class="large-12 columns">
         <h1><a href="<% $.post->path %>"><% $.post->title | H %></a></h1>
-        <small><% $.post->posted_at %></small>
+        <small class="post-date"><% $.post->posted_at %></small>
         <% $.post->content_above %>
         <ul class="inline-list">
 % while ($tag->next) {
