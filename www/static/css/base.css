@@ -62,8 +62,17 @@ nav.top-bar ul.title-area li.name {
     color: white;
     padding-left: 0.5em;
 }
-
-
+#posts > .row > div > h1 {
+    margin-bottom: 0;
+}
+#posts > .row > div > small.post-date {
+    display: block;
+    font-family: 'Museo Sans 100', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #999;
+    margin-bottom: 1em;
+}
 pre, code {
     font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
     font-size: 90%;
