@@ -16,7 +16,6 @@ $.title => ''
     <link rel="stylesheet" href="/static/css/foundation.min.css" />
     <link rel="stylesheet" href="/static/css/base.css" />
     <link rel="stylesheet" href="//f.fontdeck.com/s/css/EJxfWw6ZFcXKtIbU/vX0QLl5r6Y/automatomatromaton.com/31320.css" type="text/css" />
-    <link rel="stylesheet" href="//f.fontdeck.com/s/css/OOAUg+AlfjQcRb2ogb3CTi13nK8/automatomatromaton.com/35702.css" type="text/css" />
     <script src="/static/js/modernizr.min.js"></script>
 </head>
 <body>
