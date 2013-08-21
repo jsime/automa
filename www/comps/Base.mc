@@ -27,7 +27,7 @@ $.title => ''
 <div id="header">
     <nav class="top-bar">
         <ul class="title-area">
-            <li class="name">automa·toma·troma·ton</li>
+            <li class="name"><a href="/">automa·toma·troma·ton</a></li>
         </ul>
 
         <section class="top-bar-section">
