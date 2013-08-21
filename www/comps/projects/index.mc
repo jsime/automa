@@ -19,6 +19,13 @@ lazy-loaded, reducing the number of remote API calls incurred by the library.</p
 mappings, this library aims to provide a slightly most natural OO-Perl interface to game
 data. Still under very heavy development, most of which currently assumes full API masks.</p>
 
+<h2>EVEWeb</h2>
+
+<h3>GitHub: <a href="https://github.com/jsime/eveweb">https://github.com/jsime/eveweb</a></h3>
+
+<p>A Catalyst &amp; PostgreSQL based web application for managing personal, corporate, and alliance
+activity within EVE Online.</p>
+
 <h2>DBIx::DataStore</h2>
 
 <h3>GitHub: <a href="https://github.com/jsime/dbix-datastore">https://github.com/jsime/dbix-datastore</a></h3>
