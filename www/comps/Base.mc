@@ -40,12 +40,13 @@ $.title => ''
         <div class="large-12 columns">
             <div class="row">
                 <div class="large-8 columns">
-                    <h2>everything is ruined forever</h2>
+                    <h3>everything is ruined forever</h2>
                 </div>
                 <div class="large-4 columns">
-                    <p class="right">
-                        Photo &copy; 2013 Foobar Jones
-                    </p>
+                    <br />
+                    <h6 class="right">
+                        Photo, Arthur Caranta
+                    </h6>
                 </div>
             </div>
         </div>
