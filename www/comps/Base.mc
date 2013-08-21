@@ -21,7 +21,36 @@ $.title => ''
 </head>
 <body>
 <div id="header">
-<h1><a href="/">automa·toma·troma·ton</a></h1>
+    <nav class="top-bar">
+        <ul class="title-area">
+            <li class="name">automa·toma·troma·ton</li>
+        </ul>
+
+        <section class="top-bar-section">
+            <ul class="right">
+                <li><a href="/blog">Blerg</a></li>
+                <li><a href="/projects">Projax</a></li>
+                <li><a href="/about">Aboot</a></li>
+            </ul>
+        </section>
+    </nav>
+</div>
+
+<div class="blowout">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-8 columns">
+                    <h2>everything is ruined forever</h2>
+                </div>
+                <div class="large-4 columns">
+                    <p class="right">
+                        Photo &copy; 2013 Foobar Jones
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <section class="main">
