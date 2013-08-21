@@ -7,6 +7,18 @@ $.title('Projects');
 <p>There are a few things I tinker on from time to time. I make a feeble attempt to
 keep that list of things here, and hopefully not too horribly out of date.</p>
 
+<h2>Games::EVE::APIv2</h2>
+
+<h3>GitHub: <a href="https://github.com/jsime/games-eve-apiv2">https://github.com/jsime/games-eve-apiv2</a></h3>
+
+<p>A Perl library for making use of CCP's API for EVE Online, a massively-multiplayer space
+simulation game, spanning thousands of solar systems. Most operations are designed to be
+lazy-loaded, reducing the number of remote API calls incurred by the library.</p>
+
+<p>While the raw API provides a relatively self-consistent bastardization of Object-to-XML
+mappings, this library aims to provide a slightly most natural OO-Perl interface to game
+data. Still under very heavy development, most of which currently assumes full API masks.</p>
+
 <h2>DBIx::DataStore</h2>
 
 <h3>GitHub: <a href="https://github.com/jsime/dbix-datastore">https://github.com/jsime/dbix-datastore</a></h3>
