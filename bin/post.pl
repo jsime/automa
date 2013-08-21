@@ -6,7 +6,7 @@ use warnings;
 use DBIx::DataStore ( config => 'yaml' );
 use Getopt::Long;
 
-my ($help, $id, $title, $summary, $content1, $content2, @tags, @authors);
+my ($help, $id, $title, $summary, $content1, $content2, $list, @tags, @authors);
 
 die usage() unless GetOptions(
     'help'        => \$help,
@@ -16,9 +16,28 @@ die usage() unless GetOptions(
     'content|c=s' => \$content1,
     'extra|e=s'   => \$content2,
     'tags|g=s'    => \@tags,
-    'authors|a=i' => \@authors
+    'authors|a=i' => \@authors,
+    'list|l'      => \$list,
 );
 exit usage() if $help;
+
+my $db = DBIx::DataStore->new('automa');
+
+if ($list) {
+    my $res = $db->do(q{
+        select post_id, title
+        from posts
+        order by post_id asc
+    });
+
+    die $res->error unless $res;
+
+    while ($res->next) {
+        printf("%3d. %s\n", $res->{'post_id'}, $res->{'title'});
+    }
+
+    exit;
+}
 
 my %post;
 
@@ -32,7 +51,6 @@ unless ($id or keys %post > 0) {
     exit;
 }
 
-my $db = DBIx::DataStore->new('automa');
 my $res_post;
 
 $db->begin;
