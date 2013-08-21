@@ -11,6 +11,11 @@ $.title => ''
     <% $.Defer { %>
     <title><% join(' | ', grep { $_ =~ /\w+/ } ($.title, 'automatomatromaton')) %></title>
     </%>
+    <!-- CREDITS
+         *******
+         Top-line photo, "Dead Admin" Copyright 2008, Arthur Caranta (CC-A-SA)
+             http://www.flickr.com/photos/arthur-caranta/2926332140/
+    -->
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/foundation.min.css" />
