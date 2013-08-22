@@ -26,10 +26,6 @@ $.title => ''
 <body>
 <div id="header">
     <nav class="top-bar">
-        <ul class="title-area">
-            <li class="name"><a href="/">automa·toma·troma·ton</a></li>
-        </ul>
-
         <section class="top-bar-section">
             <ul class="right">
                 <li><a href="/blog">Blerg</a></li>
@@ -40,10 +36,15 @@ $.title => ''
     </nav>
 </div>
 
-<div class="blowout">
+<div class="blowout large">
     <div class="row">
         <div class="large-12 columns">
-            <div class="row">
+            <div class="row top">
+                <div class="large-12 columns">
+                    <h1><a href="/">automa·toma·troma·ton</a></h1>
+                </div>
+            </div>
+            <div class="row bottom">
                 <div class="large-8 columns">
                     <h3>everything is ruined forever</h2>
                 </div>
