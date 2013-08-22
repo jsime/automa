@@ -20,7 +20,7 @@ $.title => ''
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/foundation.min.css" />
     <link rel="stylesheet" href="/static/css/base.css" />
-    <link rel="stylesheet" href="//f.fontdeck.com/s/css/Gy2Mre7sm5eUiAaxaTKZs6rJTxQ/automatomatromaton.com/31320.css" type="text/css" />
+    <link rel="stylesheet" href="//f.fontdeck.com/s/css/yqwqoTCO4SJ1E027qiaOQ6mNV7E/automatomatromaton.com/31320.css" type="text/css" />
     <script src="/static/js/modernizr.min.js"></script>
 </head>
 <body>
