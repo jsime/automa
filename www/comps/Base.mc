@@ -66,7 +66,6 @@ $.title => ''
         </div>
         <div class="large-2 columns">
             <ul class="side-nav">
-                <li><label>Navigation</label></li>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/projects">Projects</a></li>
