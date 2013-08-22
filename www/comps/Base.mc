@@ -36,7 +36,7 @@ $.title => ''
     </nav>
 </div>
 
-<div class="blowout large">
+<div class="blowout <% $m->request_path eq '/' ? 'large' : 'small' %>">
     <div class="row">
         <div class="large-12 columns">
             <div class="row top">
