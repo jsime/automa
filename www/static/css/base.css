@@ -113,6 +113,9 @@ nav.top-bar ul.title-area li.name {
     color: #999;
     margin-bottom: 1em;
 }
+blockquote {
+    padding: 0.5em 1.25em;
+}
 pre, code {
     font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
     font-size: 90%;
