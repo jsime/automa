@@ -4,12 +4,23 @@ Museo Sans 100
     font-weight: 100;
     font-style: normal;
 
+Museo Sans 300
+    font-family: 'Museo Sans 300', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
 Apercu Mono Regular
     font-family: 'Apercu Mono Regular', 'Andale Mono', monospace;
     font-size-adjust: 0.5;
     font-weight: normal;
     font-style: normal;
 */
+
+body, div, p, span, blockquote {
+    font-family: 'Museo Sans 300', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
 
 .top-bar {
     margin-bottom: 0;
@@ -87,6 +98,9 @@ nav.top-bar ul.title-area li.name {
     font-weight: 100;
     font-style: normal;
     font-size: 100%;
+}
+.side-nav label {
+    margin-top: 2em;
 }
 #posts > .row > div > h1 {
     margin-bottom: 0;
