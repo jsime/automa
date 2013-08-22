@@ -116,6 +116,9 @@ nav.top-bar ul.title-area li.name {
 blockquote {
     padding: 0.5em 1.25em;
 }
+pre {
+    margin: 1em 0 1.5em 2em;
+}
 pre, code {
     font-family: "Apercu Mono Regular", 'Andale Mono', monospace;
     font-size: 90%;
