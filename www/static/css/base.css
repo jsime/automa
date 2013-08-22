@@ -82,6 +82,12 @@ nav.top-bar ul.title-area li.name {
     color: white;
     padding-left: 0.5em;
 }
+.side-nav li {
+    font-family: 'Museo Sans 100', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 100%;
+}
 #posts > .row > div > h1 {
     margin-bottom: 0;
 }
