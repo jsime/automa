@@ -16,7 +16,7 @@ Apercu Mono Regular
     font-style: normal;
 */
 
-body, div, p, span, blockquote {
+body, div, p, blockquote {
     font-family: 'Museo Sans 300', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
