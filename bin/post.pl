@@ -130,6 +130,8 @@ Examples:
 
 Options:
 
+  -l          List posts already added to the database.
+
   -i <int>    ID of post to update. If not given, creates new one.
 
   -t <text>   Post's title.
