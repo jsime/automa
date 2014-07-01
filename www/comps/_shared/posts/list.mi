@@ -1,9 +1,0 @@
-<%init>
-my @posts = Automa::Post->find( db => $db );
-</%init>
-
-<div id="posts">
-% foreach my $post (@posts) {
-    <& /_shared/posts/entry_above.mi, post => $post &>
-% }
-</div>
