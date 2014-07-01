@@ -46,3 +46,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# revel supplied .gitignore entries
+test-results/
+tmp/
+routes/
