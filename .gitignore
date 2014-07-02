@@ -54,3 +54,6 @@ routes/
 
 # exclude real app.conf from repository (since it can contain sensitive values)
 conf/app.conf
+
+# exclude local debugging log
+on
