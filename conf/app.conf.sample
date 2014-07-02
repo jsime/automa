@@ -22,6 +22,9 @@ i18n.default_language=en
 
 module.static=github.com/revel/revel/modules/static
 
+db.driver = "postgres"
+db.spec   = "sslmode=require host=localhost dbname=automa user=automa"
+
 [dev]
 mode.dev=true
 results.pretty=true
