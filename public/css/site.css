@@ -1,0 +1,80 @@
+/* Colorscheme, via https://kuler.adobe.com/Retro-Colorful-color-theme-3754797/
+    Sky Blue: rgb(132,208,217)  #84d0d9
+    Green:    rgb(118,166,104)  #76a668
+    Eggshell: rgb(242,230,208)  #f2e6d0
+    Yellow:   rgb(242,188, 87)  #f2bc57
+    Orange:   rgb(242, 93, 39)  #f25d27
+*/
+body {
+    height: auto !important;
+    color: #333;
+}
+p, li, label, input, select, option, td, a, span, blockquote {
+    font-family:"Raleway", Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight:300;
+    font-style:normal;
+}
+h1, h2, h3, h4, h5, h6, dd {
+    font-family:"Raleway", Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight:300;
+    font-style:normal;
+}
+dt, th, button, a.button {
+    font-family:"Raleway", Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight:600;
+    font-style:normal;
+}
+pre, code {
+    font-family:"Source Code Pro", monospace;
+    font-weight:300;
+    font-style:normal;
+}
+blockquote {
+    padding: 1em 1.25em;
+}
+div.wrapper {
+    margin-top: 1em;
+}
+.sidebar {
+/*
+    border-left: 1px dotted #eee;
+*/
+}
+.sidebar .title p {
+    color: #ddd;
+    font-weight: 100;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+}
+/*
+.sidebar h1 {
+    color: #ddd;
+    font-weight: 100;
+    font-size: 5em;
+    line-height: 1em;
+    text-align: right;
+}
+*/
+.sidebar ul {
+    color: #aaa;
+    list-style: none;
+    text-align: right;
+}
+.sidebar ul li {
+    padding-top: 1.5em;
+}
+.post {
+    margin: 2em 0 3em 0;
+}
+.post .pubtime {
+    font-size: 75%;
+    color: #999;
+}
+.post .summary {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-left: 2px solid #eee;
+    color: #999;
+    font-style: italic;
+}

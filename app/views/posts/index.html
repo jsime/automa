@@ -1,20 +1,22 @@
-{{template "header.html" .}}
+{{set . "title" "Automatomatromaton"}}
+{{template "wrap-pre.html" .}}
 
-<h1>Posts</h1>
-
+<div class="row">
+    <div class="medium-12 columns">
 {{if not .posts}}
-<p>
-    No posts found.
-</p>
+        <p>No posts found.</p>
 {{else}}
-  {{range .posts}}
-    <div>
-        <h3><a href="/posts/{{.GenerateUrlTitle .Title}}/{{.PostId}}">{{.Title}}</a></h3>
-        <p><small>{{.PublishedStr "date"}}</small></p>
-        <p>{{.Summary}}</p>
-        <p>{{.AboveFold}}</p>
-    </div>
+  {{range $post := .posts}}
+        <div class="post">
+            <h3><a href="/posts/{{$post.UrlTitle}}/{{$post.PostId}}">{{$post.Title}}</a></h3>
+            <p class="pubtime">{{$post.PublishedStr "date"}} at {{$post.PublishedStr "time"}}</p>
+            {{if $post.Summary}}
+            <p class="summary">{{raw $post.Summary}}</p>
+            {{end}}
+            {{raw $post.AboveFold}}
+        </div>
   {{end}}
 {{end}}
-
-{{template "footer.html" .}}
+    </div>
+</div>
+{{template "wrap-post.html" .}}
